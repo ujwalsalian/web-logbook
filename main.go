@@ -15,7 +15,7 @@ func main() {
 
     // Serve static files from the "app" directory
     fs := http.FileServer(http.Dir("./app"))
-    http.Handle("/", fs)
+    http.Handle("/", fs) // This will serve files from the "app" directory
 
     log.Printf("Server is running on port %s...", port)
     log.Fatal(http.ListenAndServe(":"+port, nil))
