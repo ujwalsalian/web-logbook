@@ -1,14 +1,13 @@
 package main
 
 import (
-    "fmt"
     "log"
     "net/http"
     "os"
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprintf(w, "Welcome to Web-Logbook!")
+    http.ServeFile(w, r, "index.html") // Serve the HTML file
 }
 
 func main() {
